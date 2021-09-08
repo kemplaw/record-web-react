@@ -1,0 +1,26 @@
+.login {
+  width: 100vw;
+  height: 100%;
+  padding-top: 35px;
+  background: url(../../assets/bg.jpg) no-repeat center center;
+  background-size: 100% 100%;
+
+  .button {
+    margin-top: 60px;
+  }
+
+  .form-wrapper {
+    padding-left: 8px;
+  }
+
+  .adm {
+    &-list {
+      background-color: transparent;
+      border: 0 none;
+    }
+
+    &-form-vertical .adm-form-item-label {
+      margin-bottom: 16px;
+    }
+  }
+}
