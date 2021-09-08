@@ -1,0 +1,26 @@
+.base-cell {
+  margin-top: 12px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #333333;
+
+  .label {
+    font-weight: 500;
+  }
+
+  .value {
+    font-weight: 400;
+  }
+}
+
+.base-cell-group {
+  padding: 20px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+
+  &.border {
+    border-bottom: 8px solid #f5f5f5;
+  }
+}

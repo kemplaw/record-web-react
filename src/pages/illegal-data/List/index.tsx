@@ -3,6 +3,7 @@ import './index.scss';
 import { SearchOutlined } from "@ant-design/icons";
 import WingBlank from "../../../components/WingBlank";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({ border }: { data?: object; border?: boolean }) => {
   const wrapperClass = useMemo(() => {
@@ -10,7 +11,7 @@ const Item = ({ border }: { data?: object; border?: boolean }) => {
   }, [border])
 
   return (
-    <div className={wrapperClass}>
+    <Link to={'/illegal-data/detail'} className={wrapperClass}>
       <Space block align={"center"} className="title-wrapper">
         <div>
           <span className="label">违法单号：</span>
@@ -75,7 +76,7 @@ const Item = ({ border }: { data?: object; border?: boolean }) => {
       <WingBlank>
         <Button style={{ marginTop: 20 }} color={"primary"} block>上传教育文件</Button>
       </WingBlank>
-    </div>
+    </Link>
   )
 }
 
