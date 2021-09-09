@@ -63,4 +63,12 @@
       }
     }
   }
+
+  .btn-grid-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0 8px;
+    align-items: center;
+  }
 }

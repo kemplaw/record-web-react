@@ -1,0 +1,17 @@
+.illegal-register-form {
+  .form-wrapper {
+    .adm-input {
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .adm-form-item-label {
+      min-width: 140px;
+      line-height: 22px;
+    }
+
+    .adm-form-item-label, .adm-radio-content {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import './index.scss'
-import { ReactNode, useMemo } from "react";
+import { CSSProperties, ReactNode, useEffect, useMemo } from "react";
 import { Space } from "antd-mobile";
+import { RightOutlined } from "@ant-design/icons";
 
 type IBaseCellGroupProps = {
   title?: ReactNode
@@ -10,7 +11,11 @@ type IBaseCellGroupProps = {
 
 type IBaseCellProps = {
   label?: string
-  value?: string
+  desc?: string
+  labelWidth?: number
+  gap?: number
+  isLink?: boolean
+  style?: CSSProperties
 }
 
 export const BaseCellGroup = ({ title, children, border }: IBaseCellGroupProps) => {
@@ -32,11 +37,35 @@ export const BaseCellGroup = ({ title, children, border }: IBaseCellGroupProps) 
   )
 }
 
-export const BaseCell = ({ label, value }: IBaseCellProps) => {
+export const BaseCell = (
+  {
+    label,
+    desc,
+    style,
+    isLink,
+    labelWidth = 60,
+    gap = 8
+  }: IBaseCellProps
+) => {
+
+  const labelStyle = useMemo<CSSProperties>(() => {
+    return {
+      display: 'inline-block',
+      flex: `0 0 ${labelWidth}px`,
+      width: labelWidth,
+      marginRight: gap
+    }
+  }, [labelWidth, gap])
+
+  useEffect(() => {
+    console.log(desc)
+  }, [desc])
+
   return (
-    <Space align={"center"} block className="base-cell">
-      <span className="label">{label}</span>
-      <span className="value">{value}</span>
+    <Space align={"center"} block className="base-cell" style={style}>
+      <span className="label" style={labelStyle}>{label}</span>
+      <span className="value">{desc}</span>
+      {isLink && <RightOutlined />}
     </Space>
   )
 }

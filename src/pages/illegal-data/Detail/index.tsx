@@ -71,19 +71,19 @@ export const Detail = () => {
         </div>
 
         <BaseCellGroup border>
-          <BaseCell label={'违法类型'} value={'【119400】醉酒后驾驶机动车'} />
-          <BaseCell label={'违法时间'} value={'2021-06-12  18:30:00'} />
-          <BaseCell label={'违法地点'} value={'晋城市文昌东街望川楼社区828号'} />
+          <BaseCell label={'违法类型'} desc={'【119400】醉酒后驾驶机动车'} />
+          <BaseCell label={'违法时间'} desc={'2021-06-12  18:30:00'} />
+          <BaseCell label={'违法地点'} desc={'晋城市文昌东街望川楼社区828号'} />
         </BaseCellGroup>
 
         <BaseCellGroup border title={'违法人信息'}>
-          <BaseCell label={'真实姓名'} value={'张文时'} />
-          <BaseCell label={'身份证号'} value={'140224199204151687'} />
-          <BaseCell label={'手机号码'} value={'18675421598'} />
+          <BaseCell label={'真实姓名'} desc={'张文时'} />
+          <BaseCell label={'身份证号'} desc={'140224199204151687'} />
+          <BaseCell label={'手机号码'} desc={'18675421598'} />
         </BaseCellGroup>
 
         <BaseCellGroup title={'提交信息'}>
-          <BaseCell label={'提交时间'} value={'2021-06-12  18:30:00'} />
+          <BaseCell label={'提交时间'} desc={'2021-06-12  18:30:00'} />
         </BaseCellGroup>
 
         <WingBlank>
@@ -99,7 +99,16 @@ export const Distribution = () => {
 
   return (
     <AppMain>
-      <NavBar leftArrow title={'出知详情'} onClickLeftArrow={onBack} />
+      <NavBar leftArrow title={'处置详情'} onClickLeftArrow={onBack} />
+
+      <BaseCellGroup>
+        <BaseCell label={'车牌号码'} desc={'晋A584DE'} />
+        <BaseCell label={'处置时间'} desc={'2021-06-12  18:30:00'} />
+        <BaseCell label={'处置类型'} desc={'罚款'} />
+        <BaseCell label={'罚款金额'} desc={'¥20.00'} />
+        <BaseCell label={'支付方式'} desc={'微信支付'} />
+        <BaseCell label={'备注'} desc={'信息备注内容'} />
+      </BaseCellGroup>
     </AppMain>
   )
 }

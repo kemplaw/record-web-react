@@ -3,12 +3,19 @@ import './index.scss';
 import { SearchOutlined } from "@ant-design/icons";
 import WingBlank from "../../../components/WingBlank";
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Item = ({ border }: { data?: object; border?: boolean }) => {
+  const history = useHistory()
   const wrapperClass = useMemo(() => {
     return border ? 'illegal-data-item border' : 'illegal-data-item'
   }, [border])
+
+  const toDistributionPage = (e: any) => {
+    e.preventDefault()
+
+    history.push('/illegal-data/distribution')
+  }
 
   return (
     <Link to={'/illegal-data/detail'} className={wrapperClass}>
@@ -74,7 +81,15 @@ const Item = ({ border }: { data?: object; border?: boolean }) => {
       </div>
 
       <WingBlank>
-        <Button style={{ marginTop: 20 }} color={"primary"} block>上传教育文件</Button>
+        <div className="btn-grid-wrapper">
+          <Button color={"primary"} block>上传教育文件</Button>
+          <Button
+            color={"primary"}
+            block
+            fill={"outline"}
+            onClick={toDistributionPage}
+          >查看处置</Button>
+        </div>
       </WingBlank>
     </Link>
   )
